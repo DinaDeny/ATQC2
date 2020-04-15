@@ -13,25 +13,37 @@ public class App {
 //2 task
 public class App {
     public static void main(String[] args) {
-        int a = 25, b = 20;
-        System.out.println(a - b);
-    } // добавить метод ещё один
+        System.out.println(r(25, 20));
+    }
+    public static int r (int n1, int n2) {
+        return n1 - n2;
+    }
+
 }
 
 
 //3 task
 public class App {
     public static void main(String[] args) {
-
-        int result = maxFunction(102, 90, 25);
+        int result = maxFunction(142, 350, 105);
         System.out.println("Максимальное значение " + result);
-
-    }
-    public static int maxFunction (int n1, int n2, int n3) {
-        return Math.max(Math.max(n1, n2), n3);
     }
 
-}  //попробовать через if
+        public static int maxFunction ( int n1, int n2, int n3){
+            int maxValue = n1;
+            if (n2 > n1 && n2 > n3) {
+                return n2;
+            }
+            else if(n3>n2 && n3>n1){
+                return n3;
+            }
+        return n1;
+        }
+
+
+    }
+
+
 
 
 //4 task
@@ -51,12 +63,27 @@ public class App {
 //5 task
 public class App {
     public static void main(String[] args) {
-
-            for (int i = 5; i > 0; i--){
-            System.out.println(i);
+        //for
+        for (int i = 5; i > 0; i--){
+        System.out.println(i);
         }
+        // while
+        int i = 5;
+        while (i >= 1){
+            System.out.println(i);
+            i--;
+        }
+        //do while
+        int i = 5;
+        do {
+            System.out.println(i);
+            i--;
+        } while (i >= 1);
 
-    } // попробовать с while+do while
+
+    }
+}
+
 
 //6 task
     public class App {
@@ -88,7 +115,7 @@ public class App {
 //8 task
     public class App {
         public static void main(String[] args) {
-            calculator ( 250.5, '/', 5.5);
+            calculator ( 250.5, '5', 5.5);
         }
         public static void calculator( double n1, char operation, double n2) {
             if(operation == '+') {
@@ -102,8 +129,24 @@ public class App {
             if (operation == '/') {
                 System.out.println("Результат деления = " + (n1 / n2));
             }
+          switch (operation){
+              case '+':
+                  System.out.println("Результат сложения = " + (n1 + n2));
+                  break;
+              case '-':
+                  System.out.println("Результат вычитания = " + (n1 - n2));
+                  break;
+              case '*':
+                  System.out.println("Результат умножения = " + (n1 * n2));
+                  break;
+              case '/':
+                  System.out.println("Результат деления = " + (n1 / n2));
+                  break;
+              default:
+                  System.out.println("Неверно указан оператор");
+          }
         }
-    } //сделать все операции в каждом новом методе + в конце вызвать switch
+    }
 
 
 
